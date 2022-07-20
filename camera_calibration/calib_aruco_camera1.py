@@ -15,7 +15,7 @@ from frankx import Robot, RobotMode, Affine, MotionData, Reaction, Measure, Join
 chessboardSize = (9,6)
 frameSize = (1440,1080)
 '''
-def calibrate():#function to do the camera calibration
+def calibrate():#function to calcul  the camera matrix
     # termination criteria
     criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
     # prepare object points, like (0,0,0), (1,0,0), (2,0,0) ....,(6,5,0)
@@ -150,16 +150,6 @@ if __name__ == "__main__":
         motion_forward = LinearRelativeMotion(way)
         robot.move(motion_forward)
         recover_error(motion_forward)
-        '''gripper.clamp()
-        way = Affine(0.0,0.0,-0.15 )
-        motion_forward = LinearRelativeMotion(way)
-        robot.move(motion_forward)
-        recover_error(motion_forward)
-        gripper.open()
-        motion_backward = LinearRelativeMotion(way.inverse())
-        robot.move(motion_backward) 
-        recover_error(motion_forward)
-        time.sleep(3)'''
         while True:
             _, video_frame = cap.read() 
             gray = cv2.cvtColor(video_frame, cv2.COLOR_BGR2GRAY)
