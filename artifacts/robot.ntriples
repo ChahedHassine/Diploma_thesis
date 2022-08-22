@@ -8,7 +8,7 @@
 
 <http://example.org/piece3> a <http://example.org/group1> .
 
-<http://example.org/piece5> a <http://example.org/group1> .
+<http://example.org/piece5> a <http://example.org/group2> .
 
 <http://move_artifact2@comnets-pc08> a <http://example.org/camera> .
 
